@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.container-app {
+    width: 100vw;
+    height: auto;
+}
+
+input,
+button {
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(102, 102, 255);
+    box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+    border-radius: 0 0 10px 10px;
+    position: relative;
+
+    div {
+        width: 90%;
+        height: 55%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding: .5em 3.5em .5em 1em;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            color: white;
+            font-weight: 400;
+            font-size: 15px;
+            background-color: rgb(204, 204, 255);
+        }
+
+        input::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        input:-moz-input-placeholder {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        input:-moz-input-placeholder {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        input:-ms-input-placeholder,
+        input::-webkit-input-placeholder,
+        input:-moz-input-placeholder,
+        input:-moz-input-placeholder {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        button {
+            position: absolute;
+            right: 0;
+            top: -2.5%;
+            width: 47px;
+            height: 47px;
+
+            border-radius: 25px;
+            font-size: 130%;
+            color: rgb(102, 102, 255);
+        }
+    }
+
+}
+
+main {
+    width: 100vw;
+
+    ul.notCompleted,
+    ul.completed {
+        width: 90%;
+        margin: 0 5%;
+        padding: 1em 0;
+        list-style-type: none;
+
+        li {
+            min-height: 40px;
+            width: 100%;
+            padding: .5em 1em;
+            margin: 10px 0%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+
+            .btnContainer {
+                align-self: flex-start;
+                width: auto;
+                height: 100%;
+                display: flex;
+
+                button {
+                    width: auto;
+                    height: 40px;
+                    font-size: 130%;
+                    background-color: transparent;
+                    color: rgb(204, 204, 255);
+                    position: relative;
+                    transition: color .2s ease;
+                }
+
+                button:first-of-type {
+                    padding-right: 1.5em;
+                }
+
+                button:last-of-type {
+                    padding-left: 1.5em;
+                }
+
+                button:last-of-type:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 1px;
+                    min-height: 40px;
+                    background-color: rgb(204, 204, 255);
+
+                }
+
+                button:hover {
+                    color: rgb(102, 102, 255);
+                }
+            }
+        }
+    }
+
+    ul.completed {
+        position: relative;
+
+        .done {
+            color: rgb(102, 102, 255);
+        }
+    }
+
+
+
+    ul.completed:before {
+        content: '';
+        width: 50%;
+        height: 1px;
+        background: rgb(204, 204, 255);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    ul.completed:empty:after {
+        content: "You have yet some tasks to complete";
+    }
+
+    ul.notCompleted:empty:after {
+        content: 'You have nothing to do';
+    }
+
+    ul.completed:after,
+    ul.notCompleted:after {
+
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: rgb(102, 102, 255);
+    }
+
+}
